@@ -19,288 +19,367 @@ namespace SwevensMarket.Forms
 
         private void InitializeComponent()
         {
-            this.pnlLeft = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblSubtitle = new System.Windows.Forms.Label();
-            this.lblMascot = new System.Windows.Forms.Label();
-            this.pnlRight = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.lblSubWelcome = new System.Windows.Forms.Label();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.lblPass = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.chkRemember = new System.Windows.Forms.CheckBox();
-            this.lnkForgot = new System.Windows.Forms.LinkLabel();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.lblOr = new System.Windows.Forms.Label();
-            this.btnAdmin = new System.Windows.Forms.Button();
-            this.btnStaff = new System.Windows.Forms.Button();
-            this.btnReseller = new System.Windows.Forms.Button();
-            this.btnCustomer = new System.Windows.Forms.Button();
-            this.pnlLeft.SuspendLayout();
-            this.pnlRight.SuspendLayout();
-            this.SuspendLayout();
-
+            pnlLeft = new Panel();
+            picBow = new PictureBox();
+            lblTitle = new Label();
+            lblSubtitle = new Label();
+            picMascot = new PictureBox();
+            lblMascotTag = new Label();
+            pnlRight = new Panel();
+            btnClose = new Button();
+            pnlCard = new CuteCardPanel();
+            lblWelcome = new Label();
+            lblSubWelcome = new Label();
+            lblUser = new Label();
+            txtUsername = new TextBox();
+            lblPass = new Label();
+            txtPassword = new TextBox();
+            chkRemember = new CheckBox();
+            lnkForgot = new LinkLabel();
+            btnLogin = new CuteButton();
+            lblOr = new Label();
+            btnAdmin = new Button();
+            btnStaff = new Button();
+            btnReseller = new Button();
+            btnCustomer = new Button();
+            pnlLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picBow).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picMascot).BeginInit();
+            pnlRight.SuspendLayout();
+            pnlCard.SuspendLayout();
+            SuspendLayout();
+            // 
             // pnlLeft
-            this.pnlLeft.BackColor = SwevenColors.MainPink;
-            this.pnlLeft.Controls.Add(this.lblTitle);
-            this.pnlLeft.Controls.Add(this.lblSubtitle);
-            this.pnlLeft.Controls.Add(this.lblMascot);
-            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLeft.Location = new System.Drawing.Point(0, 0);
-            this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(400, 550);
-            this.pnlLeft.TabIndex = 0;
-
+            // 
+            pnlLeft.BackColor = Color.FromArgb(253, 226, 228);
+            pnlLeft.Controls.Add(picBow);
+            pnlLeft.Controls.Add(lblTitle);
+            pnlLeft.Controls.Add(lblSubtitle);
+            pnlLeft.Controls.Add(picMascot);
+            pnlLeft.Controls.Add(lblMascotTag);
+            pnlLeft.Dock = DockStyle.Left;
+            pnlLeft.Location = new Point(0, 0);
+            pnlLeft.Margin = new Padding(3, 4, 3, 4);
+            pnlLeft.Name = "pnlLeft";
+            pnlLeft.Size = new Size(446, 733);
+            pnlLeft.TabIndex = 0;
+            pnlLeft.Paint += pnlLeft_Paint;
+            // 
+            // picBow
+            // 
+            picBow.Location = new Point(183, 33);
+            picBow.Margin = new Padding(3, 4, 3, 4);
+            picBow.Name = "picBow";
+            picBow.Size = new Size(80, 67);
+            picBow.SizeMode = PictureBoxSizeMode.Zoom;
+            picBow.TabIndex = 0;
+            picBow.TabStop = false;
+            // 
             // lblTitle
-            this.lblTitle.Font = new System.Drawing.Font("Georgia", 24F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = SwevenColors.DarkPink;
-            this.lblTitle.Location = new System.Drawing.Point(20, 100);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(360, 90);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "SWEVEN'S\nMARKET";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
+            // 
+            lblTitle.Font = new Font("Georgia", 22F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.FromArgb(255, 77, 141);
+            lblTitle.Location = new Point(17, 107);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(411, 60);
+            lblTitle.TabIndex = 1;
+            lblTitle.Text = "SWEVEN'S MARKET";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // lblSubtitle
-            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblSubtitle.ForeColor = SwevenColors.TextColor;
-            this.lblSubtitle.Location = new System.Drawing.Point(20, 200);
-            this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(360, 45);
-            this.lblSubtitle.TabIndex = 1;
-            this.lblSubtitle.Text = "Online Gaming Top-Up and Digital Services\nTransaction Management System";
-            this.lblSubtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
-            // lblMascot
-            this.lblMascot.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblMascot.ForeColor = SwevenColors.DarkPink;
-            this.lblMascot.Location = new System.Drawing.Point(20, 300);
-            this.lblMascot.Name = "lblMascot";
-            this.lblMascot.Size = new System.Drawing.Size(360, 80);
-            this.lblMascot.TabIndex = 2;
-            this.lblMascot.Text = "🎀  (=^･ω･^=)  🎮\nOfficial Store Portal";
-            this.lblMascot.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
+            // 
+            lblSubtitle.Font = new Font("Segoe UI", 9.5F);
+            lblSubtitle.ForeColor = Color.FromArgb(94, 33, 69);
+            lblSubtitle.Location = new Point(17, 167);
+            lblSubtitle.Name = "lblSubtitle";
+            lblSubtitle.Size = new Size(411, 53);
+            lblSubtitle.TabIndex = 2;
+            lblSubtitle.Text = "✨ Online Gaming Top-Up & Digital Services ✨\nCute & Secure System";
+            lblSubtitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // picMascot
+            // 
+            picMascot.Location = new Point(131, 247);
+            picMascot.Margin = new Padding(3, 4, 3, 4);
+            picMascot.Name = "picMascot";
+            picMascot.Size = new Size(183, 213);
+            picMascot.SizeMode = PictureBoxSizeMode.Zoom;
+            picMascot.TabIndex = 3;
+            picMascot.TabStop = false;
+            // 
+            // lblMascotTag
+            // 
+            lblMascotTag.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblMascotTag.ForeColor = Color.FromArgb(255, 77, 141);
+            lblMascotTag.Location = new Point(17, 480);
+            lblMascotTag.Name = "lblMascotTag";
+            lblMascotTag.Size = new Size(411, 60);
+            lblMascotTag.TabIndex = 4;
+            lblMascotTag.Text = "🌸 Welcome, Gamer Cutie! 🌸\n(=^･ω･^=) 🎮";
+            lblMascotTag.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // pnlRight
-            this.pnlRight.BackColor = SwevenColors.LightPink;
-            this.pnlRight.Controls.Add(this.btnClose);
-            this.pnlRight.Controls.Add(this.lblWelcome);
-            this.pnlRight.Controls.Add(this.lblSubWelcome);
-            this.pnlRight.Controls.Add(this.lblUser);
-            this.pnlRight.Controls.Add(this.txtUsername);
-            this.pnlRight.Controls.Add(this.lblPass);
-            this.pnlRight.Controls.Add(this.txtPassword);
-            this.pnlRight.Controls.Add(this.chkRemember);
-            this.pnlRight.Controls.Add(this.lnkForgot);
-            this.pnlRight.Controls.Add(this.btnLogin);
-            this.pnlRight.Controls.Add(this.lblOr);
-            this.pnlRight.Controls.Add(this.btnAdmin);
-            this.pnlRight.Controls.Add(this.btnStaff);
-            this.pnlRight.Controls.Add(this.btnReseller);
-            this.pnlRight.Controls.Add(this.btnCustomer);
-            this.pnlRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRight.Location = new System.Drawing.Point(400, 0);
-            this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(500, 550);
-            this.pnlRight.TabIndex = 1;
-
+            // 
+            pnlRight.BackColor = Color.FromArgb(255, 240, 245);
+            pnlRight.Controls.Add(btnClose);
+            pnlRight.Controls.Add(pnlCard);
+            pnlRight.Dock = DockStyle.Fill;
+            pnlRight.Location = new Point(446, 0);
+            pnlRight.Margin = new Padding(3, 4, 3, 4);
+            pnlRight.Name = "pnlRight";
+            pnlRight.Padding = new Padding(29, 33, 29, 33);
+            pnlRight.Size = new Size(583, 733);
+            pnlRight.TabIndex = 1;
+            // 
             // btnClose
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnClose.ForeColor = SwevenColors.DarkPink;
-            this.btnClose.Location = new System.Drawing.Point(450, 10);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(36, 36);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "✕";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
-
+            // 
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnClose.ForeColor = Color.FromArgb(255, 77, 141);
+            btnClose.Location = new Point(526, 13);
+            btnClose.Margin = new Padding(3, 4, 3, 4);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(41, 48);
+            btnClose.TabIndex = 0;
+            btnClose.Text = "✕";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += BtnClose_Click;
+            // 
+            // pnlCard
+            // 
+            pnlCard.BackColor = Color.White;
+            pnlCard.Controls.Add(lblWelcome);
+            pnlCard.Controls.Add(lblSubWelcome);
+            pnlCard.Controls.Add(lblUser);
+            pnlCard.Controls.Add(txtUsername);
+            pnlCard.Controls.Add(lblPass);
+            pnlCard.Controls.Add(txtPassword);
+            pnlCard.Controls.Add(chkRemember);
+            pnlCard.Controls.Add(lnkForgot);
+            pnlCard.Controls.Add(btnLogin);
+            pnlCard.Controls.Add(lblOr);
+            pnlCard.Controls.Add(btnAdmin);
+            pnlCard.Controls.Add(btnStaff);
+            pnlCard.Controls.Add(btnReseller);
+            pnlCard.Controls.Add(btnCustomer);
+            pnlCard.Location = new Point(40, 40);
+            pnlCard.Margin = new Padding(3, 4, 3, 4);
+            pnlCard.Name = "pnlCard";
+            pnlCard.Padding = new Padding(17, 20, 17, 20);
+            pnlCard.Size = new Size(486, 653);
+            pnlCard.TabIndex = 1;
+            // 
             // lblWelcome
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Georgia", 22F, System.Drawing.FontStyle.Bold);
-            this.lblWelcome.ForeColor = SwevenColors.DarkPink;
-            this.lblWelcome.Location = new System.Drawing.Point(60, 50);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(262, 35);
-            this.lblWelcome.TabIndex = 1;
-            this.lblWelcome.Text = "Welcome Back!";
-
+            // 
+            lblWelcome.AutoSize = true;
+            lblWelcome.Font = new Font("Georgia", 20F, FontStyle.Bold);
+            lblWelcome.ForeColor = Color.FromArgb(255, 77, 141);
+            lblWelcome.Location = new Point(40, 33);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(447, 39);
+            lblWelcome.TabIndex = 0;
+            lblWelcome.Text = "Welcome Back, Cutie! ✨";
+            // 
             // lblSubWelcome
-            this.lblSubWelcome.AutoSize = true;
-            this.lblSubWelcome.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblSubWelcome.ForeColor = SwevenColors.TextGray;
-            this.lblSubWelcome.Location = new System.Drawing.Point(63, 88);
-            this.lblSubWelcome.Name = "lblSubWelcome";
-            this.lblSubWelcome.Size = new System.Drawing.Size(176, 17);
-            this.lblSubWelcome.TabIndex = 2;
-            this.lblSubWelcome.Text = "Please login to your account";
-
+            // 
+            lblSubWelcome.AutoSize = true;
+            lblSubWelcome.Font = new Font("Segoe UI", 9.5F);
+            lblSubWelcome.ForeColor = Color.FromArgb(158, 88, 127);
+            lblSubWelcome.Location = new Point(43, 77);
+            lblSubWelcome.Name = "lblSubWelcome";
+            lblSubWelcome.Size = new Size(231, 21);
+            lblSubWelcome.TabIndex = 1;
+            lblSubWelcome.Text = "Please login to your account 💕";
+            // 
             // lblUser
-            this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblUser.ForeColor = SwevenColors.TextColor;
-            this.lblUser.Location = new System.Drawing.Point(60, 130);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(64, 15);
-            this.lblUser.TabIndex = 3;
-            this.lblUser.Text = "Username";
-
+            // 
+            lblUser.AutoSize = true;
+            lblUser.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblUser.ForeColor = Color.FromArgb(94, 33, 69);
+            lblUser.Location = new Point(40, 127);
+            lblUser.Name = "lblUser";
+            lblUser.Size = new Size(106, 20);
+            lblUser.TabIndex = 2;
+            lblUser.Text = "🎀 Username";
+            // 
             // txtUsername
-            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtUsername.Location = new System.Drawing.Point(60, 155);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(360, 27);
-            this.txtUsername.TabIndex = 4;
-            this.txtUsername.Text = "admin";
-
+            // 
+            txtUsername.Font = new Font("Segoe UI", 11F);
+            txtUsername.Location = new Point(40, 153);
+            txtUsername.Margin = new Padding(3, 4, 3, 4);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(399, 32);
+            txtUsername.TabIndex = 3;
+            txtUsername.Text = "admin";
+            // 
             // lblPass
-            this.lblPass.AutoSize = true;
-            this.lblPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblPass.ForeColor = SwevenColors.TextColor;
-            this.lblPass.Location = new System.Drawing.Point(60, 195);
-            this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(59, 15);
-            this.lblPass.TabIndex = 5;
-            this.lblPass.Text = "Password";
-
+            // 
+            lblPass.AutoSize = true;
+            lblPass.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblPass.ForeColor = Color.FromArgb(94, 33, 69);
+            lblPass.Location = new Point(40, 207);
+            lblPass.Name = "lblPass";
+            lblPass.Size = new Size(102, 20);
+            lblPass.TabIndex = 4;
+            lblPass.Text = "🔒 Password";
+            // 
             // txtPassword
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtPassword.Location = new System.Drawing.Point(60, 220);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(360, 27);
-            this.txtPassword.TabIndex = 6;
-            this.txtPassword.Text = "123";
-            this.txtPassword.UseSystemPasswordChar = true;
-
+            // 
+            txtPassword.Font = new Font("Segoe UI", 11F);
+            txtPassword.Location = new Point(40, 233);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(399, 32);
+            txtPassword.TabIndex = 5;
+            txtPassword.Text = "123";
+            txtPassword.UseSystemPasswordChar = true;
+            // 
             // chkRemember
-            this.chkRemember.AutoSize = true;
-            this.chkRemember.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.chkRemember.ForeColor = SwevenColors.TextColor;
-            this.chkRemember.Location = new System.Drawing.Point(60, 260);
-            this.chkRemember.Name = "chkRemember";
-            this.chkRemember.Size = new System.Drawing.Size(104, 19);
-            this.chkRemember.TabIndex = 7;
-            this.chkRemember.Text = "Remember me";
-            this.chkRemember.UseVisualStyleBackColor = true;
-
+            // 
+            chkRemember.AutoSize = true;
+            chkRemember.Font = new Font("Segoe UI", 9F);
+            chkRemember.ForeColor = Color.FromArgb(94, 33, 69);
+            chkRemember.Location = new Point(40, 287);
+            chkRemember.Margin = new Padding(3, 4, 3, 4);
+            chkRemember.Name = "chkRemember";
+            chkRemember.Size = new Size(154, 24);
+            chkRemember.TabIndex = 6;
+            chkRemember.Text = "💖 Remember me";
+            chkRemember.UseVisualStyleBackColor = true;
+            // 
             // lnkForgot
-            this.lnkForgot.AutoSize = true;
-            this.lnkForgot.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lnkForgot.LinkColor = SwevenColors.DarkPink;
-            this.lnkForgot.Location = new System.Drawing.Point(310, 260);
-            this.lnkForgot.Name = "lnkForgot";
-            this.lnkForgot.Size = new System.Drawing.Size(100, 15);
-            this.lnkForgot.TabIndex = 8;
-            this.lnkForgot.TabStop = true;
-            this.lnkForgot.Text = "Forgot password?";
-
+            // 
+            lnkForgot.AutoSize = true;
+            lnkForgot.Font = new Font("Segoe UI", 9F);
+            lnkForgot.LinkColor = Color.FromArgb(255, 77, 141);
+            lnkForgot.Location = new Point(303, 287);
+            lnkForgot.Name = "lnkForgot";
+            lnkForgot.Size = new Size(152, 20);
+            lnkForgot.TabIndex = 7;
+            lnkForgot.TabStop = true;
+            lnkForgot.Text = "Forgot password? 💭";
+            // 
             // btnLogin
-            this.btnLogin.BackColor = SwevenColors.DarkPink;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(60, 295);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(360, 44);
-            this.btnLogin.TabIndex = 9;
-            this.btnLogin.Text = "LOGIN  ➔";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
-
+            // 
+            btnLogin.BackColor = Color.FromArgb(255, 77, 141);
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(40, 333);
+            btnLogin.Margin = new Padding(3, 4, 3, 4);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(400, 61);
+            btnLogin.TabIndex = 8;
+            btnLogin.Text = "💖 LOGIN TO STORE ➔";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += BtnLogin_Click;
+            // 
             // lblOr
-            this.lblOr.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.lblOr.ForeColor = SwevenColors.TextGray;
-            this.lblOr.Location = new System.Drawing.Point(60, 360);
-            this.lblOr.Name = "lblOr";
-            this.lblOr.Size = new System.Drawing.Size(360, 20);
-            this.lblOr.TabIndex = 10;
-            this.lblOr.Text = "─── OR AUTO-FILL TEST ROLE ───";
-            this.lblOr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
+            // 
+            lblOr.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblOr.ForeColor = Color.FromArgb(158, 88, 127);
+            lblOr.Location = new Point(40, 420);
+            lblOr.Name = "lblOr";
+            lblOr.Size = new Size(400, 27);
+            lblOr.TabIndex = 9;
+            lblOr.Text = "─── 🐾 QUICK TEST ROLE 🐾 ───";
+            lblOr.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // btnAdmin
-            this.btnAdmin.BackColor = SwevenColors.MainPink;
-            this.btnAdmin.FlatAppearance.BorderColor = SwevenColors.DarkPink;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
-            this.btnAdmin.ForeColor = SwevenColors.TextColor;
-            this.btnAdmin.Location = new System.Drawing.Point(60, 390);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(80, 50);
-            this.btnAdmin.TabIndex = 11;
-            this.btnAdmin.Text = "👑 Admin";
-            this.btnAdmin.UseVisualStyleBackColor = false;
-            this.btnAdmin.Click += new System.EventHandler(this.BtnAdmin_Click);
-
+            // 
+            btnAdmin.BackColor = Color.FromArgb(253, 226, 228);
+            btnAdmin.FlatAppearance.BorderColor = Color.FromArgb(255, 179, 198);
+            btnAdmin.FlatStyle = FlatStyle.Flat;
+            btnAdmin.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            btnAdmin.ForeColor = Color.FromArgb(94, 33, 69);
+            btnAdmin.Location = new Point(40, 460);
+            btnAdmin.Margin = new Padding(3, 4, 3, 4);
+            btnAdmin.Name = "btnAdmin";
+            btnAdmin.Size = new Size(89, 67);
+            btnAdmin.TabIndex = 10;
+            btnAdmin.Text = "👑 Admin";
+            btnAdmin.UseVisualStyleBackColor = false;
+            btnAdmin.Click += BtnAdmin_Click;
+            // 
             // btnStaff
-            this.btnStaff.BackColor = SwevenColors.MainPink;
-            this.btnStaff.FlatAppearance.BorderColor = SwevenColors.DarkPink;
-            this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStaff.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
-            this.btnStaff.ForeColor = SwevenColors.TextColor;
-            this.btnStaff.Location = new System.Drawing.Point(155, 390);
-            this.btnStaff.Name = "btnStaff";
-            this.btnStaff.Size = new System.Drawing.Size(80, 50);
-            this.btnStaff.TabIndex = 12;
-            this.btnStaff.Text = "👥 Staff";
-            this.btnStaff.UseVisualStyleBackColor = false;
-            this.btnStaff.Click += new System.EventHandler(this.BtnStaff_Click);
-
+            // 
+            btnStaff.BackColor = Color.FromArgb(253, 226, 228);
+            btnStaff.FlatAppearance.BorderColor = Color.FromArgb(255, 179, 198);
+            btnStaff.FlatStyle = FlatStyle.Flat;
+            btnStaff.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            btnStaff.ForeColor = Color.FromArgb(94, 33, 69);
+            btnStaff.Location = new Point(143, 460);
+            btnStaff.Margin = new Padding(3, 4, 3, 4);
+            btnStaff.Name = "btnStaff";
+            btnStaff.Size = new Size(89, 67);
+            btnStaff.TabIndex = 11;
+            btnStaff.Text = "👥 Staff";
+            btnStaff.UseVisualStyleBackColor = false;
+            btnStaff.Click += BtnStaff_Click;
+            // 
             // btnReseller
-            this.btnReseller.BackColor = SwevenColors.MainPink;
-            this.btnReseller.FlatAppearance.BorderColor = SwevenColors.DarkPink;
-            this.btnReseller.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReseller.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
-            this.btnReseller.ForeColor = SwevenColors.TextColor;
-            this.btnReseller.Location = new System.Drawing.Point(250, 390);
-            this.btnReseller.Name = "btnReseller";
-            this.btnReseller.Size = new System.Drawing.Size(80, 50);
-            this.btnReseller.TabIndex = 13;
-            this.btnReseller.Text = "🏪 Reseller";
-            this.btnReseller.UseVisualStyleBackColor = false;
-            this.btnReseller.Click += new System.EventHandler(this.BtnReseller_Click);
-
+            // 
+            btnReseller.BackColor = Color.FromArgb(253, 226, 228);
+            btnReseller.FlatAppearance.BorderColor = Color.FromArgb(255, 179, 198);
+            btnReseller.FlatStyle = FlatStyle.Flat;
+            btnReseller.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            btnReseller.ForeColor = Color.FromArgb(94, 33, 69);
+            btnReseller.Location = new Point(246, 460);
+            btnReseller.Margin = new Padding(3, 4, 3, 4);
+            btnReseller.Name = "btnReseller";
+            btnReseller.Size = new Size(89, 67);
+            btnReseller.TabIndex = 12;
+            btnReseller.Text = "🏪 Reseller";
+            btnReseller.UseVisualStyleBackColor = false;
+            btnReseller.Click += BtnReseller_Click;
+            // 
             // btnCustomer
-            this.btnCustomer.BackColor = SwevenColors.MainPink;
-            this.btnCustomer.FlatAppearance.BorderColor = SwevenColors.DarkPink;
-            this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
-            this.btnCustomer.ForeColor = SwevenColors.TextColor;
-            this.btnCustomer.Location = new System.Drawing.Point(345, 390);
-            this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(80, 50);
-            this.btnCustomer.TabIndex = 14;
-            this.btnCustomer.Text = "🛍️ Customer";
-            this.btnCustomer.UseVisualStyleBackColor = false;
-            this.btnCustomer.Click += new System.EventHandler(this.BtnCustomer_Click);
-
+            // 
+            btnCustomer.BackColor = Color.FromArgb(253, 226, 228);
+            btnCustomer.FlatAppearance.BorderColor = Color.FromArgb(255, 179, 198);
+            btnCustomer.FlatStyle = FlatStyle.Flat;
+            btnCustomer.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            btnCustomer.ForeColor = Color.FromArgb(94, 33, 69);
+            btnCustomer.Location = new Point(349, 460);
+            btnCustomer.Margin = new Padding(3, 4, 3, 4);
+            btnCustomer.Name = "btnCustomer";
+            btnCustomer.Size = new Size(91, 67);
+            btnCustomer.TabIndex = 13;
+            btnCustomer.Text = "🛍️ Customer";
+            btnCustomer.UseVisualStyleBackColor = false;
+            btnCustomer.Click += BtnCustomer_Click;
+            // 
             // LoginForm
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = SwevenColors.LightPink;
-            this.ClientSize = new System.Drawing.Size(900, 550);
-            this.Controls.Add(this.pnlRight);
-            this.Controls.Add(this.pnlLeft);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "LoginForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sweven\'s Market - Login";
-            this.pnlLeft.ResumeLayout(false);
-            this.pnlRight.ResumeLayout(false);
-            this.pnlRight.PerformLayout();
-            this.ResumeLayout(false);
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 240, 245);
+            ClientSize = new Size(1029, 733);
+            Controls.Add(pnlRight);
+            Controls.Add(pnlLeft);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Sweven's Market - Login";
+            pnlLeft.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picBow).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picMascot).EndInit();
+            pnlRight.ResumeLayout(false);
+            pnlCard.ResumeLayout(false);
+            pnlCard.PerformLayout();
+            ResumeLayout(false);
         }
 
         private System.Windows.Forms.Panel pnlLeft;
+        private System.Windows.Forms.PictureBox picBow;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblSubtitle;
-        private System.Windows.Forms.Label lblMascot;
+        private System.Windows.Forms.PictureBox picMascot;
+        private System.Windows.Forms.Label lblMascotTag;
         private System.Windows.Forms.Panel pnlRight;
+        private SwevensMarket.Theme.CuteCardPanel pnlCard;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblSubWelcome;
@@ -310,7 +389,7 @@ namespace SwevensMarket.Forms
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.CheckBox chkRemember;
         private System.Windows.Forms.LinkLabel lnkForgot;
-        private System.Windows.Forms.Button btnLogin;
+        private SwevensMarket.Theme.CuteButton btnLogin;
         private System.Windows.Forms.Label lblOr;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnStaff;

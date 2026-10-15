@@ -13,6 +13,7 @@ namespace SwevensMarket.Forms
         public OrderManagementForm()
         {
             InitializeComponent();
+            CuteThemeHelper.ApplyCuteGrid(dgvOrders);
             SetupFilters();
             RefreshOrders();
         }
@@ -59,17 +60,17 @@ namespace SwevensMarket.Forms
             if (dgvOrders.Columns[e.ColumnIndex].Name == "OrderStatus" && e.Value != null)
             {
                 string val = e.Value.ToString() ?? "";
-                if (val == "Completed") e.CellStyle.BackColor = SwevenColors.SuccessGreen;
-                else if (val == "Processing" || val == "Pending") e.CellStyle.BackColor = SwevenColors.WarningYellow;
-                else if (val == "Cancelled") e.CellStyle.BackColor = SwevenColors.DangerRed;
+                if (val == "Completed") e.CellStyle.BackColor = CuteColors.CuteMintGreen;
+                else if (val == "Processing" || val == "Pending") e.CellStyle.BackColor = CuteColors.CuteBanana;
+                else if (val == "Cancelled") e.CellStyle.BackColor = CuteColors.CuteRoseRed;
                 e.CellStyle.ForeColor = Color.White;
             }
             else if (dgvOrders.Columns[e.ColumnIndex].Name == "GCashStatus" && e.Value != null)
             {
                 string val = e.Value.ToString() ?? "";
-                if (val == "Verified") e.CellStyle.BackColor = SwevenColors.SuccessGreen;
-                else if (val == "Pending") e.CellStyle.BackColor = SwevenColors.WarningYellow;
-                else if (val == "Rejected") e.CellStyle.BackColor = SwevenColors.DangerRed;
+                if (val == "Verified") e.CellStyle.BackColor = CuteColors.CuteMintGreen;
+                else if (val == "Pending") e.CellStyle.BackColor = CuteColors.CuteBanana;
+                else if (val == "Rejected") e.CellStyle.BackColor = CuteColors.CuteRoseRed;
                 e.CellStyle.ForeColor = Color.White;
             }
         }
@@ -80,7 +81,7 @@ namespace SwevensMarket.Forms
             {
                 order.OrderStatus = cmbNewStatus.SelectedItem!.ToString();
                 RefreshOrders();
-                MessageBox.Show($"Order #{order.OrderId} status changed to {order.OrderStatus}!", "Status Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"✨ Order #{order.OrderId} status updated to {order.OrderStatus}! 💖", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -90,7 +91,7 @@ namespace SwevensMarket.Forms
 
         private void BtnExport_Click(object? sender, EventArgs e)
         {
-            MessageBox.Show($"Exported {DataStore.Orders.Count} orders to SwevensMarket_Orders.csv successfully!", "Export Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"📁 Exported {DataStore.Orders.Count} orders to SwevensMarket_Orders.csv successfully! ✨", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void TxtSearch_TextChanged(object? sender, EventArgs e) => RefreshOrders();

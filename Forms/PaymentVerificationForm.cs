@@ -16,8 +16,9 @@ namespace SwevensMarket.Forms
         public PaymentVerificationForm()
         {
             InitializeComponent();
-            btnApprove.BackColor = SwevenColors.SuccessGreen;
-            btnReject.BackColor = SwevenColors.DangerRed;
+            CuteThemeHelper.ApplyCuteGrid(dgvPayments);
+            btnApprove.BackColor = CuteColors.CuteMintGreen;
+            btnReject.BackColor = CuteColors.CuteRoseRed;
             LoadPayments("All");
         }
 
@@ -64,7 +65,7 @@ namespace SwevensMarket.Forms
             selectedOrder.GCashStatus = "Verified";
             selectedOrder.OrderStatus = "Processing";
             selectedOrder.Remarks = txtRemarks.Text;
-            MessageBox.Show($"Payment for Order #{selectedOrder.OrderId} Approved!", "Approved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"💖 Payment for Order #{selectedOrder.OrderId} Approved & Verified! ✨", "Verified", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadPayments(currentFilter);
         }
 
@@ -79,7 +80,7 @@ namespace SwevensMarket.Forms
             selectedOrder.GCashStatus = "Rejected";
             selectedOrder.OrderStatus = "Cancelled";
             selectedOrder.Remarks = txtRemarks.Text;
-            MessageBox.Show($"Payment for Order #{selectedOrder.OrderId} Rejected!", "Rejected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show($"Payment for Order #{selectedOrder.OrderId} Rejected.", "Rejected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             LoadPayments(currentFilter);
         }
 

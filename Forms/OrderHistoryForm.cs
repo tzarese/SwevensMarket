@@ -13,6 +13,7 @@ namespace SwevensMarket.Forms
         public OrderHistoryForm()
         {
             InitializeComponent();
+            CuteThemeHelper.ApplyCuteGrid(dgvHistory);
             LoadHistory();
         }
 
@@ -34,17 +35,17 @@ namespace SwevensMarket.Forms
             if (dgvHistory.Columns[e.ColumnIndex].Name == "GCashStatus" && e.Value != null)
             {
                 string val = e.Value.ToString() ?? "";
-                if (val == "Verified") e.CellStyle.BackColor = SwevenColors.SuccessGreen;
-                else if (val == "Pending") e.CellStyle.BackColor = SwevenColors.WarningYellow;
-                else if (val == "Rejected") e.CellStyle.BackColor = SwevenColors.DangerRed;
+                if (val == "Verified") e.CellStyle.BackColor = CuteColors.CuteMintGreen;
+                else if (val == "Pending") e.CellStyle.BackColor = CuteColors.CuteBanana;
+                else if (val == "Rejected") e.CellStyle.BackColor = CuteColors.CuteRoseRed;
                 e.CellStyle.ForeColor = Color.White;
             }
             else if (dgvHistory.Columns[e.ColumnIndex].Name == "OrderStatus" && e.Value != null)
             {
                 string val = e.Value.ToString() ?? "";
-                if (val == "Completed") e.CellStyle.BackColor = SwevenColors.SuccessGreen;
-                else if (val == "Processing" || val == "Pending") e.CellStyle.BackColor = SwevenColors.WarningYellow;
-                else if (val == "Cancelled") e.CellStyle.BackColor = SwevenColors.DangerRed;
+                if (val == "Completed") e.CellStyle.BackColor = CuteColors.CuteMintGreen;
+                else if (val == "Processing" || val == "Pending") e.CellStyle.BackColor = CuteColors.CuteBanana;
+                else if (val == "Cancelled") e.CellStyle.BackColor = CuteColors.CuteRoseRed;
                 e.CellStyle.ForeColor = Color.White;
             }
         }

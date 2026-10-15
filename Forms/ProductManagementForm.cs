@@ -13,6 +13,7 @@ namespace SwevensMarket.Forms
         public ProductManagementForm()
         {
             InitializeComponent();
+            CuteThemeHelper.ApplyCuteGrid(dgvProducts);
             RefreshGrid();
         }
 
@@ -98,7 +99,7 @@ namespace SwevensMarket.Forms
 
             pnlAddEdit.Visible = false;
             RefreshGrid();
-            MessageBox.Show("Product saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("🌸 Product saved successfully! 💖", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void TxtSearch_TextChanged(object? sender, EventArgs e) => RefreshGrid();

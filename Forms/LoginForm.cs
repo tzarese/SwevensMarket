@@ -1,6 +1,8 @@
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using SwevensMarket.Data;
+using SwevensMarket.Theme;
 using SwevensMarket.Utils;
 
 namespace SwevensMarket.Forms
@@ -10,6 +12,14 @@ namespace SwevensMarket.Forms
         public LoginForm()
         {
             InitializeComponent();
+            ApplyCuteVisuals();
+        }
+
+        private void ApplyCuteVisuals()
+        {
+            // Dynamically generate the cute mascot and ribbon images
+            picBow.Image = CuteThemeHelper.GeneratePinkBow(70, 50);
+            picMascot.Image = CuteThemeHelper.GenerateCuteMascot(160, 160);
         }
 
         private void BtnClose_Click(object? sender, EventArgs e)
@@ -22,7 +32,7 @@ namespace SwevensMarket.Forms
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            var user = DataStore.Users.Find(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase) 
+            var user = DataStore.Users.Find(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase)
                                               && u.Password == password && u.IsActive);
 
             if (user != null)
@@ -49,13 +59,18 @@ namespace SwevensMarket.Forms
             }
             else
             {
-                MessageBox.Show("Invalid username or password!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid username or password! (´;ω;｀)", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void BtnAdmin_Click(object? sender, EventArgs e)    { txtUsername.Text = "admin"; txtPassword.Text = "123"; }
-        private void BtnStaff_Click(object? sender, EventArgs e)    { txtUsername.Text = "staff"; txtPassword.Text = "123"; }
+        private void BtnAdmin_Click(object? sender, EventArgs e) { txtUsername.Text = "admin"; txtPassword.Text = "123"; }
+        private void BtnStaff_Click(object? sender, EventArgs e) { txtUsername.Text = "staff"; txtPassword.Text = "123"; }
         private void BtnReseller_Click(object? sender, EventArgs e) { txtUsername.Text = "reseller"; txtPassword.Text = "123"; }
         private void BtnCustomer_Click(object? sender, EventArgs e) { txtUsername.Text = "maria"; txtPassword.Text = "123"; }
+
+        private void pnlLeft_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

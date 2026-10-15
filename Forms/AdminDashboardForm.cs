@@ -18,8 +18,10 @@ namespace SwevensMarket.Forms
 
         private void SetupDashboard()
         {
-            lblWelcome.Text = $"Welcome, {UserSession.FullName}!";
-            lblRole.Text = $"Role: {UserSession.Role}";
+            lblWelcome.Text = $"🌸 Welcome, {UserSession.FullName}! ✨";
+            lblRole.Text = $"👑 Administrator Portal • Sweven's Market";
+
+            CuteThemeHelper.ApplyCuteGrid(dgvRecentOrders);
 
             clockTimer = new System.Windows.Forms.Timer { Interval = 1000 };
             clockTimer.Tick += (s, e) => lblDateTime.Text = DateTime.Now.ToString("MMM dd, yyyy  hh:mm:ss tt");

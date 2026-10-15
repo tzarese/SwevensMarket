@@ -17,6 +17,7 @@ namespace SwevensMarket.Forms
         public CreateOrderGCashForm()
         {
             InitializeComponent();
+            CuteThemeHelper.ApplyCuteGrid(dgvCatalog);
             LoadCatalog();
         }
 
@@ -32,8 +33,8 @@ namespace SwevensMarket.Forms
             if (dgvCatalog.CurrentRow?.DataBoundItem is Product p)
             {
                 selectedProduct = p;
-                lblSelectedProduct.Text = $"Selected: {p.Name} ({p.Category})";
-                lblSelectedPrice.Text = $"Amount Due: ₱{p.Price:N2}";
+                lblSelectedProduct.Text = $"🌸 Selected: {p.Name} ({p.Category}) 💖";
+                lblSelectedPrice.Text = $"✨ Amount Due: ₱{p.Price:N2}";
             }
         }
 
@@ -54,13 +55,13 @@ namespace SwevensMarket.Forms
         {
             if (selectedProduct == null)
             {
-                MessageBox.Show("Please click on a product from the list first!", "Select Product", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please click on a product from the list first! 💕", "Select Product", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(txtGCashRef.Text) || txtGCashRef.Text.Trim().Length < 8)
             {
-                MessageBox.Show("Please enter a valid GCash Reference Number (from your GCash SMS/receipt)!", "Reference Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid GCash Reference Number from your SMS or screenshot! 📱", "Reference Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -81,7 +82,7 @@ namespace SwevensMarket.Forms
 
             DataStore.Orders.Add(newOrder);
 
-            MessageBox.Show($"Order #{newOrderId} for {selectedProduct.Name} placed successfully!\n\nGCash Ref #{newOrder.GCashReferenceNo} has been submitted to Admin for verification.\nCheck 'My Order History' to track status.",
+            MessageBox.Show($"🎉 Order #{newOrderId} for {selectedProduct.Name} placed successfully!\n\n💖 GCash Ref #{newOrder.GCashReferenceNo} has been submitted for verification.\nCheck 'My Order History' to track status! ✨",
                             "Order Placed!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             txtGCashRef.Clear();
