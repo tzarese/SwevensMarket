@@ -8,185 +8,17 @@ using SwevensMarket.Theme;
 
 namespace SwevensMarket.Forms
 {
-    public class PaymentVerificationForm : Form
+    public partial class PaymentVerificationForm : Form
     {
-        private Button btnTabAll;
-        private Button btnTabPending;
-        private Button btnTabVerified;
-        private Button btnTabRejected;
-        private DataGridView dgvPayments;
         private string currentFilter = "All";
-
-        // Right details panel
-        private Panel pnlDetails;
-        private Label lblOrderIdVal;
-        private Label lblCustomerVal;
-        private Label lblProductVal;
-        private Label lblAmountVal;
-        private Label lblRefVal;
-        private Label lblStatusVal;
-        private PictureBox picProof;
-        private TextBox txtRemarks;
-        private Button btnApprove;
-        private Button btnReject;
-
-        private Order selectedOrder = null;
+        private Order? selectedOrder = null;
 
         public PaymentVerificationForm()
         {
             InitializeComponent();
+            btnApprove.BackColor = SwevenColors.SuccessGreen;
+            btnReject.BackColor = SwevenColors.DangerRed;
             LoadPayments("All");
-        }
-
-        private void InitializeComponent()
-        {
-            this.Size = new Size(1060, 650);
-            this.BackColor = SwevenColors.LightPink;
-
-            var lblHeader = new Label
-            {
-                Text = "💳 GCash Payment Verification",
-                Font = new Font("Segoe UI", 14, FontStyle.Bold),
-                ForeColor = SwevenColors.TextColor,
-                Location = new Point(20, 15),
-                AutoSize = true
-            };
-
-            // Filter Tabs
-            btnTabAll = CreateTabButton("All Payments", new Point(20, 55), (s, e) => LoadPayments("All"));
-            btnTabPending = CreateTabButton("⏳ Pending", new Point(140, 55), (s, e) => LoadPayments("Pending"));
-            btnTabVerified = CreateTabButton("✔ Verified", new Point(260, 55), (s, e) => LoadPayments("Verified"));
-            btnTabRejected = CreateTabButton("✖ Rejected", new Point(380, 55), (s, e) => LoadPayments("Rejected"));
-
-            // Grid for payments
-            dgvPayments = new DataGridView
-            {
-                Location = new Point(20, 100),
-                Size = new Size(650, 530),
-                BackgroundColor = Color.White,
-                BorderStyle = BorderStyle.None,
-                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-                ReadOnly = true,
-                AllowUserToAddRows = false,
-                RowHeadersVisible = false,
-                SelectionMode = DataGridViewSelectionMode.FullRowSelect
-            };
-            dgvPayments.CellClick += DgvPayments_CellClick;
-
-            // Details and Proof Review Panel on the Right
-            BuildDetailsPanel();
-
-            this.Controls.Add(lblHeader);
-            this.Controls.Add(btnTabAll);
-            this.Controls.Add(btnTabPending);
-            this.Controls.Add(btnTabVerified);
-            this.Controls.Add(btnTabRejected);
-            this.Controls.Add(dgvPayments);
-            this.Controls.Add(pnlDetails);
-        }
-
-        private Button CreateTabButton(string text, Point loc, EventHandler onClick)
-        {
-            var btn = new Button
-            {
-                Text = text,
-                Location = loc,
-                Size = new Size(110, 34),
-                BackColor = SwevenColors.MainPink,
-                ForeColor = SwevenColors.TextColor,
-                FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe UI", 9, FontStyle.Bold),
-                Cursor = Cursors.Hand
-            };
-            btn.FlatAppearance.BorderColor = SwevenColors.DarkPink;
-            btn.Click += onClick;
-            return btn;
-        }
-
-        private void BuildDetailsPanel()
-        {
-            pnlDetails = new Panel
-            {
-                Location = new Point(685, 55),
-                Size = new Size(355, 575),
-                BackColor = Color.White,
-                Padding = new Padding(15)
-            };
-
-            var lblT = new Label { Text = "GCash Receipt & Verification", Font = new Font("Segoe UI", 11, FontStyle.Bold), ForeColor = SwevenColors.DarkPink, Location = new Point(15, 12), AutoSize = true };
-
-            int y = 45;
-            lblOrderIdVal = AddDetailRow("Order ID:", "-", ref y);
-            lblCustomerVal = AddDetailRow("Customer:", "-", ref y);
-            lblProductVal = AddDetailRow("Product:", "-", ref y);
-            lblAmountVal = AddDetailRow("Amount:", "-", ref y);
-            lblRefVal = AddDetailRow("GCash Ref #:", "-", ref y);
-            lblStatusVal = AddDetailRow("Payment Status:", "-", ref y);
-
-            var lblProof = new Label { Text = "Proof of Payment Screenshot:", Font = new Font("Segoe UI", 8.5f, FontStyle.Bold), Location = new Point(15, y), AutoSize = true };
-            y += 22;
-
-            picProof = new PictureBox
-            {
-                Location = new Point(15, y),
-                Size = new Size(325, 170),
-                BorderStyle = BorderStyle.FixedSingle,
-                SizeMode = PictureBoxSizeMode.Zoom,
-                BackColor = SwevenColors.LightGray
-            };
-            y += 180;
-
-            var lblRemarks = new Label { Text = "Admin Remarks / Notes:", Font = new Font("Segoe UI", 8.5f, FontStyle.Bold), Location = new Point(15, y), AutoSize = true };
-            y += 20;
-
-            txtRemarks = new TextBox { Location = new Point(15, y), Size = new Size(325, 30), Font = new Font("Segoe UI", 9) };
-            y += 40;
-
-            btnApprove = new Button
-            {
-                Text = "✔ Approve Payment",
-                Location = new Point(15, y),
-                Size = new Size(155, 38),
-                BackColor = SwevenColors.SuccessGreen,
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe UI", 9.5f, FontStyle.Bold),
-                Cursor = Cursors.Hand
-            };
-            btnApprove.FlatAppearance.BorderSize = 0;
-            btnApprove.Click += BtnApprove_Click;
-
-            btnReject = new Button
-            {
-                Text = "✖ Reject Payment",
-                Location = new Point(185, y),
-                Size = new Size(155, 38),
-                BackColor = SwevenColors.DangerRed,
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe UI", 9.5f, FontStyle.Bold),
-                Cursor = Cursors.Hand
-            };
-            btnReject.FlatAppearance.BorderSize = 0;
-            btnReject.Click += BtnReject_Click;
-
-            pnlDetails.Controls.Add(lblT);
-            pnlDetails.Controls.Add(lblProof);
-            pnlDetails.Controls.Add(picProof);
-            pnlDetails.Controls.Add(lblRemarks);
-            pnlDetails.Controls.Add(txtRemarks);
-            pnlDetails.Controls.Add(btnApprove);
-            pnlDetails.Controls.Add(btnReject);
-        }
-
-        private Label AddDetailRow(string title, string def, ref int y)
-        {
-            var lblLbl = new Label { Text = title, Location = new Point(15, y), AutoSize = true, Font = new Font("Segoe UI", 9, FontStyle.Bold), ForeColor = SwevenColors.TextGray };
-            var lblVal = new Label { Text = def, Location = new Point(130, y), AutoSize = true, Font = new Font("Segoe UI", 9), ForeColor = SwevenColors.TextColor };
-            pnlDetails.Controls.Add(lblLbl);
-            pnlDetails.Controls.Add(lblVal);
-            y += 24;
-            return lblVal;
         }
 
         private void LoadPayments(string filter)
@@ -201,7 +33,7 @@ namespace SwevensMarket.Forms
             dgvPayments.DataSource = query.OrderByDescending(o => o.Date).ToList();
         }
 
-        private void DgvPayments_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvPayments_CellClick(object? sender, DataGridViewCellEventArgs e)
         {
             if (dgvPayments.CurrentRow?.DataBoundItem is Order o)
             {
@@ -221,7 +53,7 @@ namespace SwevensMarket.Forms
             }
         }
 
-        private void BtnApprove_Click(object sender, EventArgs e)
+        private void BtnApprove_Click(object? sender, EventArgs e)
         {
             if (selectedOrder == null)
             {
@@ -236,7 +68,7 @@ namespace SwevensMarket.Forms
             LoadPayments(currentFilter);
         }
 
-        private void BtnReject_Click(object sender, EventArgs e)
+        private void BtnReject_Click(object? sender, EventArgs e)
         {
             if (selectedOrder == null)
             {
@@ -250,5 +82,10 @@ namespace SwevensMarket.Forms
             MessageBox.Show($"Payment for Order #{selectedOrder.OrderId} Rejected!", "Rejected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             LoadPayments(currentFilter);
         }
+
+        private void BtnTabAll_Click(object? sender, EventArgs e) => LoadPayments("All");
+        private void BtnTabPending_Click(object? sender, EventArgs e) => LoadPayments("Pending");
+        private void BtnTabVerified_Click(object? sender, EventArgs e) => LoadPayments("Verified");
+        private void BtnTabRejected_Click(object? sender, EventArgs e) => LoadPayments("Rejected");
     }
 }
