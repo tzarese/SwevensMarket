@@ -8,6 +8,7 @@ namespace SwevensMarket.Theme
         public static readonly Color MainPink      = ColorTranslator.FromHtml("#FDE7F0"); // Left panels, cards
         public static readonly Color DarkPink      = ColorTranslator.FromHtml("#EC4899"); // Buttons, primary accents
         public static readonly Color LightPink     = ColorTranslator.FromHtml("#FFF5F8"); // Background of forms
+        public static readonly Color CardBg        = ColorTranslator.FromHtml("#FFF5F8"); // Main content container background
         public static readonly Color TextColor     = ColorTranslator.FromHtml("#7B3F5E"); // Main title & body text
         public static readonly Color White         = ColorTranslator.FromHtml("#FFFFFF");
 

@@ -44,11 +44,23 @@ namespace SwevensMarket.Forms
 
                 this.Hide();
 
-                if (user.Role == "Admin" || user.Role == "Staff")
+                if (user.Role == "Admin")
                 {
                     var adminDash = new AdminDashboardForm();
                     adminDash.FormClosed += (s, args) => this.Close();
                     adminDash.Show();
+                }
+                else if (user.Role == "Staff")
+                {
+                    var staffDash = new StaffDashboardForm();
+                    staffDash.FormClosed += (s, args) => this.Close();
+                    staffDash.Show();
+                }
+                else if (user.Role == "Reseller")
+                {
+                    var resellerDash = new ResellerDashboardForm();
+                    resellerDash.FormClosed += (s, args) => this.Close();
+                    resellerDash.Show();
                 }
                 else
                 {
