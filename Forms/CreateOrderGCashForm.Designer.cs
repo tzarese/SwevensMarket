@@ -32,6 +32,7 @@ namespace SwevensMarket.Forms
             this.lblSelectedPrice = new System.Windows.Forms.Label();
             this.lblGame = new System.Windows.Forms.Label();
             this.txtGameUserId = new System.Windows.Forms.TextBox();
+            this.lblFieldHint = new System.Windows.Forms.Label();
             this.pnlMerchant = new System.Windows.Forms.Panel();
             this.lblGCashMerchant = new System.Windows.Forms.Label();
             this.lblRef = new System.Windows.Forms.Label();
@@ -138,6 +139,7 @@ namespace SwevensMarket.Forms
             this.pnlGCash.Controls.Add(this.lblSelectedPrice);
             this.pnlGCash.Controls.Add(this.lblGame);
             this.pnlGCash.Controls.Add(this.txtGameUserId);
+            this.pnlGCash.Controls.Add(this.lblFieldHint);
             this.pnlGCash.Controls.Add(this.pnlMerchant);
             this.pnlGCash.Controls.Add(this.lblRef);
             this.pnlGCash.Controls.Add(this.txtGCashRef);
@@ -157,15 +159,16 @@ namespace SwevensMarket.Forms
             this.lblStep2.ForeColor = SwevenColors.DarkPink;
             this.lblStep2.Location = new System.Drawing.Point(15, 12);
             this.lblStep2.Name = "lblStep2";
-            this.lblStep2.Size = new System.Drawing.Size(232, 20);
+            this.lblStep2.Size = new System.Drawing.Size(260, 20);
             this.lblStep2.TabIndex = 0;
+            this.lblStep2.UseMnemonic = false;
             this.lblStep2.Text = "2. Enter Details & GCash Payment";
 
             // lblSelectedProduct
             this.lblSelectedProduct.AutoSize = true;
             this.lblSelectedProduct.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
             this.lblSelectedProduct.ForeColor = SwevenColors.TextColor;
-            this.lblSelectedProduct.Location = new System.Drawing.Point(15, 45);
+            this.lblSelectedProduct.Location = new System.Drawing.Point(15, 42);
             this.lblSelectedProduct.Name = "lblSelectedProduct";
             this.lblSelectedProduct.Size = new System.Drawing.Size(306, 17);
             this.lblSelectedProduct.TabIndex = 1;
@@ -175,7 +178,7 @@ namespace SwevensMarket.Forms
             this.lblSelectedPrice.AutoSize = true;
             this.lblSelectedPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblSelectedPrice.ForeColor = SwevenColors.DarkPink;
-            this.lblSelectedPrice.Location = new System.Drawing.Point(15, 70);
+            this.lblSelectedPrice.Location = new System.Drawing.Point(15, 65);
             this.lblSelectedPrice.Name = "lblSelectedPrice";
             this.lblSelectedPrice.Size = new System.Drawing.Size(147, 21);
             this.lblSelectedPrice.TabIndex = 2;
@@ -184,26 +187,38 @@ namespace SwevensMarket.Forms
             // lblGame
             this.lblGame.AutoSize = true;
             this.lblGame.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblGame.Location = new System.Drawing.Point(15, 105);
+            this.lblGame.ForeColor = SwevenColors.TextColor;
+            this.lblGame.Location = new System.Drawing.Point(15, 96);
             this.lblGame.Name = "lblGame";
-            this.lblGame.Size = new System.Drawing.Size(262, 15);
+            this.lblGame.Size = new System.Drawing.Size(350, 15);
             this.lblGame.TabIndex = 3;
-            this.lblGame.Text = "Game User ID / Server (e.g. 12345678 (2001)):";
+            this.lblGame.Text = "🎮 Mobile Legends User ID & Zone ID:";
 
             // txtGameUserId
             this.txtGameUserId.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.txtGameUserId.Location = new System.Drawing.Point(15, 125);
+            this.txtGameUserId.Location = new System.Drawing.Point(15, 116);
             this.txtGameUserId.Name = "txtGameUserId";
+            this.txtGameUserId.PlaceholderText = "e.g. 12345678 (3001)";
             this.txtGameUserId.Size = new System.Drawing.Size(440, 24);
             this.txtGameUserId.TabIndex = 4;
+
+            // lblFieldHint
+            this.lblFieldHint.AutoSize = true;
+            this.lblFieldHint.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Italic);
+            this.lblFieldHint.ForeColor = SwevenColors.TextGray;
+            this.lblFieldHint.Location = new System.Drawing.Point(15, 143);
+            this.lblFieldHint.Name = "lblFieldHint";
+            this.lblFieldHint.Size = new System.Drawing.Size(340, 13);
+            this.lblFieldHint.TabIndex = 12;
+            this.lblFieldHint.Text = "💡 Find in MLBB Profile (e.g. User ID: 12345678, Zone ID: 3001).";
 
             // pnlMerchant
             this.pnlMerchant.BackColor = SwevenColors.MainPink;
             this.pnlMerchant.Controls.Add(this.lblGCashMerchant);
-            this.pnlMerchant.Location = new System.Drawing.Point(15, 160);
+            this.pnlMerchant.Location = new System.Drawing.Point(15, 166);
             this.pnlMerchant.Name = "pnlMerchant";
             this.pnlMerchant.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlMerchant.Size = new System.Drawing.Size(440, 65);
+            this.pnlMerchant.Size = new System.Drawing.Size(440, 62);
             this.pnlMerchant.TabIndex = 5;
 
             // lblGCashMerchant
@@ -212,7 +227,7 @@ namespace SwevensMarket.Forms
             this.lblGCashMerchant.ForeColor = SwevenColors.TextColor;
             this.lblGCashMerchant.Location = new System.Drawing.Point(10, 10);
             this.lblGCashMerchant.Name = "lblGCashMerchant";
-            this.lblGCashMerchant.Size = new System.Drawing.Size(420, 45);
+            this.lblGCashMerchant.Size = new System.Drawing.Size(420, 42);
             this.lblGCashMerchant.TabIndex = 0;
             this.lblGCashMerchant.Text = "📱 GCash Merchant Details:\nNumber: 0917-888-9999 (Sweven\'s Market Official)\nSend via Express Send & save your Reference Number.";
 
@@ -237,7 +252,7 @@ namespace SwevensMarket.Forms
             // lblProof
             this.lblProof.AutoSize = true;
             this.lblProof.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
-            this.lblProof.Location = new System.Drawing.Point(15, 290);
+            this.lblProof.Location = new System.Drawing.Point(15, 288);
             this.lblProof.Name = "lblProof";
             this.lblProof.Size = new System.Drawing.Size(225, 15);
             this.lblProof.TabIndex = 8;
@@ -248,7 +263,7 @@ namespace SwevensMarket.Forms
             this.btnUpload.FlatAppearance.BorderColor = SwevenColors.DarkPink;
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpload.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
-            this.btnUpload.Location = new System.Drawing.Point(15, 310);
+            this.btnUpload.Location = new System.Drawing.Point(15, 308);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(140, 30);
             this.btnUpload.TabIndex = 9;
@@ -259,9 +274,9 @@ namespace SwevensMarket.Forms
             // picReceiptPreview
             this.picReceiptPreview.BackColor = SwevenColors.LightGray;
             this.picReceiptPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picReceiptPreview.Location = new System.Drawing.Point(165, 310);
+            this.picReceiptPreview.Location = new System.Drawing.Point(165, 308);
             this.picReceiptPreview.Name = "picReceiptPreview";
-            this.picReceiptPreview.Size = new System.Drawing.Size(290, 80);
+            this.picReceiptPreview.Size = new System.Drawing.Size(290, 85);
             this.picReceiptPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picReceiptPreview.TabIndex = 10;
             this.picReceiptPreview.TabStop = false;
@@ -272,11 +287,12 @@ namespace SwevensMarket.Forms
             this.btnSubmitOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitOrder.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
             this.btnSubmitOrder.ForeColor = System.Drawing.Color.White;
-            this.btnSubmitOrder.Location = new System.Drawing.Point(15, 405);
+            this.btnSubmitOrder.Location = new System.Drawing.Point(15, 408);
             this.btnSubmitOrder.Name = "btnSubmitOrder";
             this.btnSubmitOrder.Size = new System.Drawing.Size(440, 45);
             this.btnSubmitOrder.TabIndex = 11;
             this.btnSubmitOrder.Text = "🚀 SUBMIT ORDER & GCASH PAYMENT";
+            this.btnSubmitOrder.UseMnemonic = false;
             this.btnSubmitOrder.UseVisualStyleBackColor = false;
             this.btnSubmitOrder.Click += new System.EventHandler(this.BtnSubmitOrder_Click);
 
@@ -314,6 +330,7 @@ namespace SwevensMarket.Forms
         private System.Windows.Forms.Label lblSelectedPrice;
         private System.Windows.Forms.Label lblGame;
         private System.Windows.Forms.TextBox txtGameUserId;
+        private System.Windows.Forms.Label lblFieldHint;
         private System.Windows.Forms.Panel pnlMerchant;
         private System.Windows.Forms.Label lblGCashMerchant;
         private System.Windows.Forms.Label lblRef;
