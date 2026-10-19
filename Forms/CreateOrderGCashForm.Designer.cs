@@ -20,9 +20,12 @@ namespace SwevensMarket.Forms
         private void InitializeComponent()
         {
             this.lblHeader = new System.Windows.Forms.Label();
-            this.lblCatTitle = new System.Windows.Forms.Label();
-            this.cmbCustomerCategory = new System.Windows.Forms.ComboBox();
-            this.dgvCatalog = new System.Windows.Forms.DataGridView();
+            this.pnlCategoryTabs = new System.Windows.Forms.Panel();
+            this.btnCatMLBB = new System.Windows.Forms.Button();
+            this.btnCatGames = new System.Windows.Forms.Button();
+            this.btnCatVoucher = new System.Windows.Forms.Button();
+            this.btnCatEntertainment = new System.Windows.Forms.Button();
+            this.pnlItemCards = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlGCash = new System.Windows.Forms.Panel();
             this.lblStep2 = new System.Windows.Forms.Label();
             this.lblSelectedProduct = new System.Windows.Forms.Label();
@@ -38,7 +41,7 @@ namespace SwevensMarket.Forms
             this.picReceiptPreview = new System.Windows.Forms.PictureBox();
             this.btnSubmitOrder = new System.Windows.Forms.Button();
 
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCatalog)).BeginInit();
+            this.pnlCategoryTabs.SuspendLayout();
             this.pnlGCash.SuspendLayout();
             this.pnlMerchant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReceiptPreview)).BeginInit();
@@ -46,54 +49,87 @@ namespace SwevensMarket.Forms
 
             // lblHeader
             this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblHeader.ForeColor = SwevenColors.TextColor;
-            this.lblHeader.Location = new System.Drawing.Point(20, 15);
+            this.lblHeader.Location = new System.Drawing.Point(20, 12);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(384, 25);
+            this.lblHeader.Size = new System.Drawing.Size(425, 28);
             this.lblHeader.TabIndex = 0;
-            this.lblHeader.Text = "🎮 Create Top-Up Order + GCash Payment";
+            this.lblHeader.Text = "🎮 Choose Game / Service & Buy with GCash";
 
-            // lblCatTitle
-            this.lblCatTitle.AutoSize = true;
-            this.lblCatTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCatTitle.ForeColor = SwevenColors.DarkPink;
-            this.lblCatTitle.Location = new System.Drawing.Point(20, 50);
-            this.lblCatTitle.Name = "lblCatTitle";
-            this.lblCatTitle.Size = new System.Drawing.Size(225, 19);
-            this.lblCatTitle.TabIndex = 1;
-            this.lblCatTitle.Text = "1. Choose Your Top-Up / Service:";
+            // pnlCategoryTabs
+            this.pnlCategoryTabs.Controls.Add(this.btnCatMLBB);
+            this.pnlCategoryTabs.Controls.Add(this.btnCatGames);
+            this.pnlCategoryTabs.Controls.Add(this.btnCatVoucher);
+            this.pnlCategoryTabs.Controls.Add(this.btnCatEntertainment);
+            this.pnlCategoryTabs.Location = new System.Drawing.Point(20, 48);
+            this.pnlCategoryTabs.Name = "pnlCategoryTabs";
+            this.pnlCategoryTabs.Size = new System.Drawing.Size(530, 36);
+            this.pnlCategoryTabs.TabIndex = 1;
 
-            // cmbCustomerCategory
-            this.cmbCustomerCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCustomerCategory.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.cmbCustomerCategory.FormattingEnabled = true;
-            this.cmbCustomerCategory.Items.AddRange(new object[] {
-            "All Categories",
-            "MLBB",
-            "Games",
-            "Voucher",
-            "Entertainment"});
-            this.cmbCustomerCategory.Location = new System.Drawing.Point(260, 46);
-            this.cmbCustomerCategory.Name = "cmbCustomerCategory";
-            this.cmbCustomerCategory.Size = new System.Drawing.Size(280, 24);
-            this.cmbCustomerCategory.TabIndex = 4;
-            this.cmbCustomerCategory.SelectedIndex = 0;
-            this.cmbCustomerCategory.SelectedIndexChanged += new System.EventHandler(this.CmbCustomerCategory_SelectedIndexChanged);
+            // btnCatMLBB
+            this.btnCatMLBB.BackColor = SwevenColors.DarkPink;
+            this.btnCatMLBB.FlatAppearance.BorderSize = 0;
+            this.btnCatMLBB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCatMLBB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCatMLBB.ForeColor = System.Drawing.Color.White;
+            this.btnCatMLBB.Location = new System.Drawing.Point(0, 2);
+            this.btnCatMLBB.Name = "btnCatMLBB";
+            this.btnCatMLBB.Size = new System.Drawing.Size(125, 32);
+            this.btnCatMLBB.TabIndex = 0;
+            this.btnCatMLBB.Text = "🌸 MLBB";
+            this.btnCatMLBB.UseVisualStyleBackColor = false;
+            this.btnCatMLBB.Click += new System.EventHandler(this.BtnCategory_Click);
 
-            // dgvCatalog
-            this.dgvCatalog.AllowUserToAddRows = false;
-            this.dgvCatalog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCatalog.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCatalog.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCatalog.Location = new System.Drawing.Point(20, 75);
-            this.dgvCatalog.Name = "dgvCatalog";
-            this.dgvCatalog.ReadOnly = true;
-            this.dgvCatalog.RowHeadersVisible = false;
-            this.dgvCatalog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCatalog.Size = new System.Drawing.Size(520, 550);
-            this.dgvCatalog.TabIndex = 2;
-            this.dgvCatalog.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCatalog_CellClick);
+            // btnCatGames
+            this.btnCatGames.BackColor = System.Drawing.Color.White;
+            this.btnCatGames.FlatAppearance.BorderSize = 0;
+            this.btnCatGames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCatGames.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCatGames.ForeColor = SwevenColors.TextColor;
+            this.btnCatGames.Location = new System.Drawing.Point(132, 2);
+            this.btnCatGames.Name = "btnCatGames";
+            this.btnCatGames.Size = new System.Drawing.Size(125, 32);
+            this.btnCatGames.TabIndex = 1;
+            this.btnCatGames.Text = "🎮 Games";
+            this.btnCatGames.UseVisualStyleBackColor = false;
+            this.btnCatGames.Click += new System.EventHandler(this.BtnCategory_Click);
+
+            // btnCatVoucher
+            this.btnCatVoucher.BackColor = System.Drawing.Color.White;
+            this.btnCatVoucher.FlatAppearance.BorderSize = 0;
+            this.btnCatVoucher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCatVoucher.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCatVoucher.ForeColor = SwevenColors.TextColor;
+            this.btnCatVoucher.Location = new System.Drawing.Point(264, 2);
+            this.btnCatVoucher.Name = "btnCatVoucher";
+            this.btnCatVoucher.Size = new System.Drawing.Size(125, 32);
+            this.btnCatVoucher.TabIndex = 2;
+            this.btnCatVoucher.Text = "🎟️ Voucher";
+            this.btnCatVoucher.UseVisualStyleBackColor = false;
+            this.btnCatVoucher.Click += new System.EventHandler(this.BtnCategory_Click);
+
+            // btnCatEntertainment
+            this.btnCatEntertainment.BackColor = System.Drawing.Color.White;
+            this.btnCatEntertainment.FlatAppearance.BorderSize = 0;
+            this.btnCatEntertainment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCatEntertainment.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCatEntertainment.ForeColor = SwevenColors.TextColor;
+            this.btnCatEntertainment.Location = new System.Drawing.Point(396, 2);
+            this.btnCatEntertainment.Name = "btnCatEntertainment";
+            this.btnCatEntertainment.Size = new System.Drawing.Size(132, 32);
+            this.btnCatEntertainment.TabIndex = 3;
+            this.btnCatEntertainment.Text = "📱 Entertainment";
+            this.btnCatEntertainment.UseVisualStyleBackColor = false;
+            this.btnCatEntertainment.Click += new System.EventHandler(this.BtnCategory_Click);
+
+            // pnlItemCards
+            this.pnlItemCards.AutoScroll = true;
+            this.pnlItemCards.BackColor = System.Drawing.Color.Transparent;
+            this.pnlItemCards.Location = new System.Drawing.Point(20, 90);
+            this.pnlItemCards.Name = "pnlItemCards";
+            this.pnlItemCards.Size = new System.Drawing.Size(530, 545);
+            this.pnlItemCards.TabIndex = 2;
 
             // pnlGCash
             this.pnlGCash.BackColor = System.Drawing.Color.White;
@@ -109,10 +145,10 @@ namespace SwevensMarket.Forms
             this.pnlGCash.Controls.Add(this.btnUpload);
             this.pnlGCash.Controls.Add(this.picReceiptPreview);
             this.pnlGCash.Controls.Add(this.btnSubmitOrder);
-            this.pnlGCash.Location = new System.Drawing.Point(560, 75);
+            this.pnlGCash.Location = new System.Drawing.Point(565, 48);
             this.pnlGCash.Name = "pnlGCash";
-            this.pnlGCash.Padding = new System.Windows.Forms.Padding(20);
-            this.pnlGCash.Size = new System.Drawing.Size(475, 550);
+            this.pnlGCash.Padding = new System.Windows.Forms.Padding(18);
+            this.pnlGCash.Size = new System.Drawing.Size(475, 587);
             this.pnlGCash.TabIndex = 3;
 
             // lblStep2
@@ -178,8 +214,7 @@ namespace SwevensMarket.Forms
             this.lblGCashMerchant.Name = "lblGCashMerchant";
             this.lblGCashMerchant.Size = new System.Drawing.Size(420, 45);
             this.lblGCashMerchant.TabIndex = 0;
-            this.lblGCashMerchant.Text = "📱 GCash Merchant Details:\nNumber: 0917-888-9999 (Sweven\'s Market Official)\nSend " +
-    "via Express Send & save your Reference Number.";
+            this.lblGCashMerchant.Text = "📱 GCash Merchant Details:\nNumber: 0917-888-9999 (Sweven\'s Market Official)\nSend via Express Send & save your Reference Number.";
 
             // lblRef
             this.lblRef.AutoSize = true;
@@ -237,7 +272,7 @@ namespace SwevensMarket.Forms
             this.btnSubmitOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitOrder.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
             this.btnSubmitOrder.ForeColor = System.Drawing.Color.White;
-            this.btnSubmitOrder.Location = new System.Drawing.Point(15, 400);
+            this.btnSubmitOrder.Location = new System.Drawing.Point(15, 405);
             this.btnSubmitOrder.Name = "btnSubmitOrder";
             this.btnSubmitOrder.Size = new System.Drawing.Size(440, 45);
             this.btnSubmitOrder.TabIndex = 11;
@@ -251,14 +286,13 @@ namespace SwevensMarket.Forms
             this.BackColor = SwevenColors.LightPink;
             this.ClientSize = new System.Drawing.Size(1060, 650);
             this.Controls.Add(this.pnlGCash);
-            this.Controls.Add(this.dgvCatalog);
-            this.Controls.Add(this.cmbCustomerCategory);
-            this.Controls.Add(this.lblCatTitle);
+            this.Controls.Add(this.pnlItemCards);
+            this.Controls.Add(this.pnlCategoryTabs);
             this.Controls.Add(this.lblHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CreateOrderGCashForm";
             this.Text = "Create Order";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCatalog)).EndInit();
+            this.pnlCategoryTabs.ResumeLayout(false);
             this.pnlGCash.ResumeLayout(false);
             this.pnlGCash.PerformLayout();
             this.pnlMerchant.ResumeLayout(false);
@@ -268,9 +302,12 @@ namespace SwevensMarket.Forms
         }
 
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.Label lblCatTitle;
-        private System.Windows.Forms.ComboBox cmbCustomerCategory;
-        private System.Windows.Forms.DataGridView dgvCatalog;
+        private System.Windows.Forms.Panel pnlCategoryTabs;
+        private System.Windows.Forms.Button btnCatMLBB;
+        private System.Windows.Forms.Button btnCatGames;
+        private System.Windows.Forms.Button btnCatVoucher;
+        private System.Windows.Forms.Button btnCatEntertainment;
+        private System.Windows.Forms.FlowLayoutPanel pnlItemCards;
         private System.Windows.Forms.Panel pnlGCash;
         private System.Windows.Forms.Label lblStep2;
         private System.Windows.Forms.Label lblSelectedProduct;
