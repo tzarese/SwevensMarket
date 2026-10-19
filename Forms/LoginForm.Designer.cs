@@ -94,12 +94,13 @@ namespace SwevensMarket.Forms
             lblSubtitle.Name = "lblSubtitle";
             lblSubtitle.Size = new Size(411, 53);
             lblSubtitle.TabIndex = 2;
-            lblSubtitle.Text = "✨ Online Gaming Top-Up & Digital Services ✨\nCute & Secure System";
+            lblSubtitle.Text = " Online Gaming Top-Up Digital Services System";
             lblSubtitle.TextAlign = ContentAlignment.MiddleCenter;
+            lblSubtitle.Click += lblSubtitle_Click;
             // 
             // picMascot
             // 
-            picMascot.Location = new Point(131, 247);
+            picMascot.Location = new Point(90, 247);
             picMascot.Margin = new Padding(3, 4, 3, 4);
             picMascot.Name = "picMascot";
             picMascot.Size = new Size(183, 213);
@@ -115,7 +116,7 @@ namespace SwevensMarket.Forms
             lblMascotTag.Name = "lblMascotTag";
             lblMascotTag.Size = new Size(411, 60);
             lblMascotTag.TabIndex = 4;
-            lblMascotTag.Text = "🌸 Welcome, Gamer Cutie! 🌸\n(=^･ω･^=) 🎮";
+            lblMascotTag.Text = "🎮 Welcome, Gamer Cutie! 🎮";
             lblMascotTag.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pnlRight
@@ -177,9 +178,9 @@ namespace SwevensMarket.Forms
             lblWelcome.ForeColor = Color.FromArgb(255, 77, 141);
             lblWelcome.Location = new Point(40, 33);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(447, 39);
+            lblWelcome.Size = new Size(408, 39);
             lblWelcome.TabIndex = 0;
-            lblWelcome.Text = "Welcome Back, Cutie! ✨";
+            lblWelcome.Text = "Welcome Back, Cutie! ";
             // 
             // lblSubWelcome
             // 
@@ -188,9 +189,9 @@ namespace SwevensMarket.Forms
             lblSubWelcome.ForeColor = Color.FromArgb(158, 88, 127);
             lblSubWelcome.Location = new Point(43, 77);
             lblSubWelcome.Name = "lblSubWelcome";
-            lblSubWelcome.Size = new Size(231, 21);
+            lblSubWelcome.Size = new Size(209, 21);
             lblSubWelcome.TabIndex = 1;
-            lblSubWelcome.Text = "Please login to your account 💕";
+            lblSubWelcome.Text = "Please login to your account ";
             // 
             // lblUser
             // 
@@ -234,6 +235,7 @@ namespace SwevensMarket.Forms
             txtPassword.TabIndex = 5;
             txtPassword.Text = "123";
             txtPassword.UseSystemPasswordChar = true;
+            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
             // chkRemember
             // 
@@ -283,7 +285,7 @@ namespace SwevensMarket.Forms
             lblOr.Name = "lblOr";
             lblOr.Size = new Size(400, 27);
             lblOr.TabIndex = 9;
-            lblOr.Text = "─── 🐾 QUICK TEST ROLE 🐾 ───";
+            lblOr.Text = "───  CHOOSE ROLE  ───";
             lblOr.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnAdmin

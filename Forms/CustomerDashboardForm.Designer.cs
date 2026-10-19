@@ -19,145 +19,162 @@ namespace SwevensMarket.Forms
 
         private void InitializeComponent()
         {
-            this.pnlSidebar = new System.Windows.Forms.Panel();
-            this.lblLogo = new System.Windows.Forms.Label();
-            this.btnNavTopUp = new System.Windows.Forms.Button();
-            this.btnNavHistory = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.pnlHeader = new System.Windows.Forms.Panel();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.pnlContent = new System.Windows.Forms.Panel();
-
-            this.pnlSidebar.SuspendLayout();
-            this.pnlHeader.SuspendLayout();
-            this.SuspendLayout();
-
+            pnlSidebar = new Panel();
+            lblLogo = new Label();
+            btnNavTopUp = new Button();
+            btnNavHistory = new Button();
+            btnLogout = new Button();
+            pnlHeader = new Panel();
+            lblWelcome = new Label();
+            btnClose = new Button();
+            pnlContent = new Panel();
+            pnlSidebar.SuspendLayout();
+            pnlHeader.SuspendLayout();
+            SuspendLayout();
+            // 
             // pnlSidebar
-            this.pnlSidebar.BackColor = SwevenColors.MainPink;
-            this.pnlSidebar.Controls.Add(this.lblLogo);
-            this.pnlSidebar.Controls.Add(this.btnNavTopUp);
-            this.pnlSidebar.Controls.Add(this.btnNavHistory);
-            this.pnlSidebar.Controls.Add(this.btnLogout);
-            this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
-            this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(220, 720);
-            this.pnlSidebar.TabIndex = 0;
-
+            // 
+            pnlSidebar.BackColor = Color.FromArgb(253, 231, 240);
+            pnlSidebar.Controls.Add(lblLogo);
+            pnlSidebar.Controls.Add(btnNavTopUp);
+            pnlSidebar.Controls.Add(btnNavHistory);
+            pnlSidebar.Controls.Add(btnLogout);
+            pnlSidebar.Dock = DockStyle.Left;
+            pnlSidebar.Location = new Point(0, 0);
+            pnlSidebar.Margin = new Padding(3, 4, 3, 4);
+            pnlSidebar.Name = "pnlSidebar";
+            pnlSidebar.Size = new Size(251, 960);
+            pnlSidebar.TabIndex = 0;
+            // 
             // lblLogo
-            this.lblLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblLogo.Font = new System.Drawing.Font("Georgia", 13F, System.Drawing.FontStyle.Bold);
-            this.lblLogo.ForeColor = SwevenColors.DarkPink;
-            this.lblLogo.Location = new System.Drawing.Point(0, 0);
-            this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(220, 80);
-            this.lblLogo.TabIndex = 0;
-            this.lblLogo.Text = "🌸 SWEVEN\'S 🌸\nCUSTOMER HUB";
-            this.lblLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
+            // 
+            lblLogo.Dock = DockStyle.Top;
+            lblLogo.Font = new Font("Georgia", 13F, FontStyle.Bold);
+            lblLogo.ForeColor = Color.FromArgb(236, 72, 153);
+            lblLogo.Location = new Point(0, 0);
+            lblLogo.Name = "lblLogo";
+            lblLogo.Size = new Size(251, 107);
+            lblLogo.TabIndex = 0;
+            lblLogo.Text = "SWEVEN'S CUSTOMER HUB";
+            lblLogo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // btnNavTopUp
-            this.btnNavTopUp.BackColor = SwevenColors.MainPink;
-            this.btnNavTopUp.FlatAppearance.BorderSize = 0;
-            this.btnNavTopUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavTopUp.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnNavTopUp.ForeColor = SwevenColors.TextColor;
-            this.btnNavTopUp.Location = new System.Drawing.Point(10, 90);
-            this.btnNavTopUp.Name = "btnNavTopUp";
-            this.btnNavTopUp.Size = new System.Drawing.Size(200, 42);
-            this.btnNavTopUp.TabIndex = 1;
-            this.btnNavTopUp.Text = "🎮 Top-Up & Buy";
-            this.btnNavTopUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNavTopUp.UseVisualStyleBackColor = false;
-            this.btnNavTopUp.Click += new System.EventHandler(this.BtnNavTopUp_Click);
-
+            // 
+            btnNavTopUp.BackColor = Color.FromArgb(253, 231, 240);
+            btnNavTopUp.FlatAppearance.BorderSize = 0;
+            btnNavTopUp.FlatStyle = FlatStyle.Flat;
+            btnNavTopUp.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnNavTopUp.ForeColor = Color.FromArgb(123, 63, 94);
+            btnNavTopUp.Location = new Point(11, 120);
+            btnNavTopUp.Margin = new Padding(3, 4, 3, 4);
+            btnNavTopUp.Name = "btnNavTopUp";
+            btnNavTopUp.Size = new Size(229, 56);
+            btnNavTopUp.TabIndex = 1;
+            btnNavTopUp.Text = "🎮 Top-Up & Buy";
+            btnNavTopUp.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavTopUp.UseVisualStyleBackColor = false;
+            btnNavTopUp.Click += BtnNavTopUp_Click;
+            // 
             // btnNavHistory
-            this.btnNavHistory.BackColor = SwevenColors.MainPink;
-            this.btnNavHistory.FlatAppearance.BorderSize = 0;
-            this.btnNavHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavHistory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnNavHistory.ForeColor = SwevenColors.TextColor;
-            this.btnNavHistory.Location = new System.Drawing.Point(10, 140);
-            this.btnNavHistory.Name = "btnNavHistory";
-            this.btnNavHistory.Size = new System.Drawing.Size(200, 42);
-            this.btnNavHistory.TabIndex = 2;
-            this.btnNavHistory.Text = "📜 My Order History";
-            this.btnNavHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNavHistory.UseVisualStyleBackColor = false;
-            this.btnNavHistory.Click += new System.EventHandler(this.BtnNavHistory_Click);
-
+            // 
+            btnNavHistory.BackColor = Color.FromArgb(253, 231, 240);
+            btnNavHistory.FlatAppearance.BorderSize = 0;
+            btnNavHistory.FlatStyle = FlatStyle.Flat;
+            btnNavHistory.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnNavHistory.ForeColor = Color.FromArgb(123, 63, 94);
+            btnNavHistory.Location = new Point(11, 187);
+            btnNavHistory.Margin = new Padding(3, 4, 3, 4);
+            btnNavHistory.Name = "btnNavHistory";
+            btnNavHistory.Size = new Size(229, 56);
+            btnNavHistory.TabIndex = 2;
+            btnNavHistory.Text = "📜 My Order History";
+            btnNavHistory.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavHistory.UseVisualStyleBackColor = false;
+            btnNavHistory.Click += BtnNavHistory_Click;
+            // 
             // btnLogout
-            this.btnLogout.BackColor = SwevenColors.MainPink;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLogout.ForeColor = SwevenColors.TextColor;
-            this.btnLogout.Location = new System.Drawing.Point(10, 210);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(200, 42);
-            this.btnLogout.TabIndex = 3;
-            this.btnLogout.Text = "🚪 Logout";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
-
+            // 
+            btnLogout.BackColor = Color.FromArgb(253, 231, 240);
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnLogout.ForeColor = Color.FromArgb(123, 63, 94);
+            btnLogout.Location = new Point(11, 280);
+            btnLogout.Margin = new Padding(3, 4, 3, 4);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(229, 56);
+            btnLogout.TabIndex = 3;
+            btnLogout.Text = "🚪 Logout";
+            btnLogout.TextAlign = ContentAlignment.MiddleLeft;
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += BtnLogout_Click;
+            // 
             // pnlHeader
-            this.pnlHeader.BackColor = System.Drawing.Color.White;
-            this.pnlHeader.Controls.Add(this.lblWelcome);
-            this.pnlHeader.Controls.Add(this.btnClose);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(220, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1060, 65);
-            this.pnlHeader.TabIndex = 1;
-
+            // 
+            pnlHeader.BackColor = Color.White;
+            pnlHeader.Controls.Add(lblWelcome);
+            pnlHeader.Controls.Add(btnClose);
+            pnlHeader.Dock = DockStyle.Top;
+            pnlHeader.Location = new Point(251, 0);
+            pnlHeader.Margin = new Padding(3, 4, 3, 4);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(1212, 87);
+            pnlHeader.TabIndex = 1;
+            // 
             // lblWelcome
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblWelcome.ForeColor = SwevenColors.DarkPink;
-            this.lblWelcome.Location = new System.Drawing.Point(20, 20);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(288, 21);
-            this.lblWelcome.TabIndex = 0;
-            this.lblWelcome.Text = "Hello, Customer! ✨ Happy Gaming!";
-
+            // 
+            lblWelcome.AutoSize = true;
+            lblWelcome.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblWelcome.ForeColor = Color.FromArgb(236, 72, 153);
+            lblWelcome.Location = new Point(23, 27);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(323, 28);
+            lblWelcome.TabIndex = 0;
+            lblWelcome.Text = "Hello, Customer! Happy Gaming!";
+            // 
             // btnClose
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnClose.ForeColor = SwevenColors.DarkPink;
-            this.btnClose.Location = new System.Drawing.Point(1010, 15);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(35, 35);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "✕";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
-
+            // 
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnClose.ForeColor = Color.FromArgb(236, 72, 153);
+            btnClose.Location = new Point(1154, 20);
+            btnClose.Margin = new Padding(3, 4, 3, 4);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(40, 47);
+            btnClose.TabIndex = 1;
+            btnClose.Text = "✕";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += BtnClose_Click;
+            // 
             // pnlContent
-            this.pnlContent.BackColor = SwevenColors.LightPink;
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(220, 65);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1060, 655);
-            this.pnlContent.TabIndex = 2;
-
+            // 
+            pnlContent.BackColor = Color.FromArgb(255, 245, 248);
+            pnlContent.Dock = DockStyle.Fill;
+            pnlContent.Location = new Point(251, 87);
+            pnlContent.Margin = new Padding(3, 4, 3, 4);
+            pnlContent.Name = "pnlContent";
+            pnlContent.Size = new Size(1212, 873);
+            pnlContent.TabIndex = 2;
+            // 
             // CustomerDashboardForm
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = SwevenColors.LightPink;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.pnlContent);
-            this.Controls.Add(this.pnlHeader);
-            this.Controls.Add(this.pnlSidebar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CustomerDashboardForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Customer Dashboard";
-            this.pnlSidebar.ResumeLayout(false);
-            this.pnlHeader.ResumeLayout(false);
-            this.pnlHeader.PerformLayout();
-            this.ResumeLayout(false);
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 245, 248);
+            ClientSize = new Size(1463, 960);
+            Controls.Add(pnlContent);
+            Controls.Add(pnlHeader);
+            Controls.Add(pnlSidebar);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "CustomerDashboardForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Customer Dashboard";
+            pnlSidebar.ResumeLayout(false);
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
+            ResumeLayout(false);
         }
 
         private System.Windows.Forms.Panel pnlSidebar;

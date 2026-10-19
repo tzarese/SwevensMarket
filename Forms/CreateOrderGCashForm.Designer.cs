@@ -21,6 +21,7 @@ namespace SwevensMarket.Forms
         {
             this.lblHeader = new System.Windows.Forms.Label();
             this.lblCatTitle = new System.Windows.Forms.Label();
+            this.cmbCustomerCategory = new System.Windows.Forms.ComboBox();
             this.dgvCatalog = new System.Windows.Forms.DataGridView();
             this.pnlGCash = new System.Windows.Forms.Panel();
             this.lblStep2 = new System.Windows.Forms.Label();
@@ -62,6 +63,23 @@ namespace SwevensMarket.Forms
             this.lblCatTitle.Size = new System.Drawing.Size(225, 19);
             this.lblCatTitle.TabIndex = 1;
             this.lblCatTitle.Text = "1. Choose Your Top-Up / Service:";
+
+            // cmbCustomerCategory
+            this.cmbCustomerCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCustomerCategory.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.cmbCustomerCategory.FormattingEnabled = true;
+            this.cmbCustomerCategory.Items.AddRange(new object[] {
+            "All Categories",
+            "MLBB",
+            "Games",
+            "Voucher",
+            "Entertainment"});
+            this.cmbCustomerCategory.Location = new System.Drawing.Point(260, 46);
+            this.cmbCustomerCategory.Name = "cmbCustomerCategory";
+            this.cmbCustomerCategory.Size = new System.Drawing.Size(280, 24);
+            this.cmbCustomerCategory.TabIndex = 4;
+            this.cmbCustomerCategory.SelectedIndex = 0;
+            this.cmbCustomerCategory.SelectedIndexChanged += new System.EventHandler(this.CmbCustomerCategory_SelectedIndexChanged);
 
             // dgvCatalog
             this.dgvCatalog.AllowUserToAddRows = false;
@@ -234,6 +252,7 @@ namespace SwevensMarket.Forms
             this.ClientSize = new System.Drawing.Size(1060, 650);
             this.Controls.Add(this.pnlGCash);
             this.Controls.Add(this.dgvCatalog);
+            this.Controls.Add(this.cmbCustomerCategory);
             this.Controls.Add(this.lblCatTitle);
             this.Controls.Add(this.lblHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -250,6 +269,7 @@ namespace SwevensMarket.Forms
 
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label lblCatTitle;
+        private System.Windows.Forms.ComboBox cmbCustomerCategory;
         private System.Windows.Forms.DataGridView dgvCatalog;
         private System.Windows.Forms.Panel pnlGCash;
         private System.Windows.Forms.Label lblStep2;

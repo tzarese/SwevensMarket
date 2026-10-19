@@ -76,10 +76,15 @@ namespace SwevensMarket.Forms
         }
 
         private void BtnNavDashboard_Click(object? sender, EventArgs e) => ShowDashboardHome();
-        private void BtnNavProducts_Click(object? sender, EventArgs e)  => LoadChildForm(new ProductManagementForm());
-        private void BtnNavOrders_Click(object? sender, EventArgs e)    => LoadChildForm(new OrderManagementForm());
-        private void BtnNavPayments_Click(object? sender, EventArgs e)  => LoadChildForm(new PaymentVerificationForm());
-        private void BtnNavUsers_Click(object? sender, EventArgs e)     => LoadChildForm(new UserManagementForm());
-        private void BtnNavReports_Click(object? sender, EventArgs e)   => LoadChildForm(new ReportsForm());
+        private void BtnNavProducts_Click(object? sender, EventArgs e) => LoadChildForm(new ProductManagementForm());
+        private void BtnNavOrders_Click(object? sender, EventArgs e) => LoadChildForm(new OrderManagementForm());
+        private void BtnNavPayments_Click(object? sender, EventArgs e) => LoadChildForm(new PaymentVerificationForm());
+        private void BtnNavUsers_Click(object? sender, EventArgs e) => LoadChildForm(new UserManagementForm());
+        private void BtnNavReports_Click(object? sender, EventArgs e) => LoadChildForm(new ReportsForm());
+
+        private void pnlSidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

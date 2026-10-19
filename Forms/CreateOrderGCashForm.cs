@@ -23,10 +23,17 @@ namespace SwevensMarket.Forms
 
         private void LoadCatalog()
         {
-            var activeItems = DataStore.Products.Where(p => p.Status == "Active").ToList();
+            var query = DataStore.Products.Where(p => p.Status == "Active");
+            if (cmbCustomerCategory != null && cmbCustomerCategory.SelectedIndex > 0)
+            {
+                string cat = cmbCustomerCategory.SelectedItem!.ToString()!;
+                query = query.Where(p => p.Category == cat);
+            }
             dgvCatalog.DataSource = null;
-            dgvCatalog.DataSource = activeItems;
+            dgvCatalog.DataSource = query.ToList();
         }
+
+        private void CmbCustomerCategory_SelectedIndexChanged(object? sender, EventArgs e) => LoadCatalog();
 
         private void DgvCatalog_CellClick(object? sender, DataGridViewCellEventArgs e)
         {

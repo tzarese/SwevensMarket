@@ -12,6 +12,8 @@ namespace SwevensMarket.Forms
         public ReportsForm()
         {
             InitializeComponent();
+            dtpStart.Value = DateTime.Today.AddDays(-30);
+            dtpEnd.Value = DateTime.Today.AddDays(1);
             GenerateReport();
         }
 

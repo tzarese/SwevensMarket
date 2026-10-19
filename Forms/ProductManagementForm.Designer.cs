@@ -72,11 +72,10 @@ namespace SwevensMarket.Forms
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Items.AddRange(new object[] {
             "All Categories",
-            "Mobile Legends",
-            "Valorant",
-            "Call of Duty Mobile",
-            "Roblox",
-            "Digital Service"});
+            "MLBB",
+            "Games",
+            "Voucher",
+            "Entertainment"});
             this.cmbCategory.Location = new System.Drawing.Point(250, 55);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(180, 25);
@@ -219,11 +218,10 @@ namespace SwevensMarket.Forms
             this.cmbProductCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProductCategory.FormattingEnabled = true;
             this.cmbProductCategory.Items.AddRange(new object[] {
-            "Mobile Legends",
-            "Valorant",
-            "Call of Duty Mobile",
-            "Roblox",
-            "Digital Service"});
+            "MLBB",
+            "Games",
+            "Voucher",
+            "Entertainment"});
             this.cmbProductCategory.Location = new System.Drawing.Point(20, 185);
             this.cmbProductCategory.Name = "cmbProductCategory";
             this.cmbProductCategory.Size = new System.Drawing.Size(330, 23);
