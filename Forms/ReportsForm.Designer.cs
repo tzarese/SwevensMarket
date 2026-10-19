@@ -48,8 +48,9 @@ namespace SwevensMarket.Forms
             this.lblHeader.ForeColor = SwevenColors.TextColor;
             this.lblHeader.Location = new System.Drawing.Point(20, 15);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(340, 25);
+            this.lblHeader.Size = new System.Drawing.Size(400, 25);
             this.lblHeader.TabIndex = 0;
+            this.lblHeader.UseMnemonic = false;
             this.lblHeader.Text = "📊 Financial Reports & Sales Analytics";
 
             // lblFrom
